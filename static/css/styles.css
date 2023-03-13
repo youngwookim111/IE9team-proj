@@ -1,0 +1,148 @@
+
+
+
+
+
+main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+main #title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+main #title h1 {
+    font-size: 8rem;
+    border: 2px solid #000;
+    padding: 50px 0;
+}
+
+main #team_profile {
+    display: flex;
+    justify-content: center;
+}
+
+main #team_profile .t_card {
+    position: relative;
+    margin-right: 10px;
+}
+
+main #team_profile .t_card .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main #team_profile .t_card .txt_box p {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+main #team_profile .t_card .txt_box p:first-child {
+    margin-bottom: 10px;
+}
+
+main #team_profile .t_card .txt_box p:last-child {}
+
+main #team_profile a img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+main #team_profile {
+    margin: 50px;
+}
+
+main #team_profile .c_1 {}
+
+main #team_profile .c_1 img {}
+
+main #team_profile .c_2 {}
+
+main #team_profile .c_2 img {}
+
+main #team_profile .c_3 {}
+
+main #team_profile .c_3 img {}
+
+main #team_profile .c_4 {}
+
+main #team_profile .c_4 img {}
+
+main #team_profile .c_5 {}
+
+main #team_profile .c_5 img {}
+
+main #info {}
+
+main #info>ul {}
+
+main #info>ul .open_btn {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+main #info>ul .open_btn span {}
+
+main #info>ul .open_btn button {}
+
+main #info>ul .open_btn button img {}
+
+main #info>ul li {}
+
+main #info>ul li ul {}
+
+.write_box {
+    text-align: right;
+    /* background-color:pink; */
+    width: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main #info>ul li ul .write_box input[type=text] {
+    width: 500px;
+    /* background-color:aqua; */
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.w_b_btn {
+    margin: 10px;
+}
+
+
+
+main #info>ul li ul .box {
+    width: 500px;
+    background-color: aqua;
+    margin: 50px auto;
+}
+
+main #info>ul li ul .box p {}
+
+main #info>ul li ul .box p:first-child {
+    margin-bottom: 15px;
+}
+
+main #info>ul li ul .b_1 {}
+
+main #info>ul li ul .b_2 {}
+
+main #info>ul li ul .b_3 {}
+
+main #info>ul li ul .b_4 {}
+
+/* 방명록할거면 어팬드해야하니깐 이부분은 그때지우면될거같습니다. */
