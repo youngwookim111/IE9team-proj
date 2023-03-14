@@ -1,8 +1,16 @@
-
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+html,body,h1,h2,h3,h4,h5,h6,
+p,div,ol,ul,li,dl,dt,dd,address,blockquote,video,
+em,strong,span,sup,sub,del,s,q,a,img,
+table,thead,tbody,tfoot,th,tr,td,
+form,fieldset,legend,input,select,option,button,textarea,label,optgroup,
+header,main,footer,nav,section,article,aside,figure,figcaption,details {
+    /* font-family: 'Dokdo', cursive;
+    font-family: 'Hi Melody', cursive;
+    font-family: 'Jua', sans-serif;
+    font-family: 'Nanum Brush Script', cursive; */
+    font-family: 'Nanum Gothic', sans-serif;
+}
 main {
     width: 1200px;
     margin: 0 auto;
@@ -14,9 +22,10 @@ main #title {
 }
 
 main #title h1 {
+    background-image:url(../img/ie9_logo.png);
     font-size: 8rem;
-    border: 2px solid #000;
-    padding: 50px 0;
+    background-size: contain;
+    height:300px;
 }
 
 main #team_profile {
@@ -85,13 +94,34 @@ main #info>ul {}
 
 main #info>ul .open_btn {
     width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
+    justify-content: space-between;
+
+}
+main #info>ul .close_btn {
+    width: 800px;
+    margin: 50px auto;
+    display: none;
     justify-content: space-between;
 }
 
-main #info>ul .open_btn span {}
+main #info>ul .open_btn span {font-size:15px;}
 
+main #info>ul .close_btn span {font-size:15px;}
+
+main #info>ul .open_list {display:none;}
+
+main #info>ul .open_list p {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.8;
+}
+main #info>ul .open_list p span {color:rgb(255, 0, 212); font-size:2.5rem;
+    line-height: 1.8; font-weight:700;}
+main #info>ul .open_list p strong {color:rgb(0, 8, 255); font-size:2.5rem;
+    line-height: 1.8;font-weight:700;}
+main #info>ul .open_list p em {font-size:2rem; line-height:1.8; color:#f00;font-weight:700;}
 main #info>ul .open_btn button {}
 
 main #info>ul .open_btn button img {}
@@ -122,7 +152,6 @@ main #info>ul li ul .write_box input[type=text] {
 .w_b_btn {
     margin: 10px;
 }
-
 
 
 main #info>ul li ul .box {

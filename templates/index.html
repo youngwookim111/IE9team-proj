@@ -92,13 +92,19 @@
         </div><!-- e:team_profile -->
         <div id="info">
             <ul>
-                 <!-- 팀 소개 보이기/숨기기 -->
-                 <li class="open_btn"><span>팀소개</span><button onclick="open_btn"><img src="static/img/Triangle Arrow.png" alt="더보기"></button></li>
-                 <li class="close_btn"><span>팀소개</span><button onclick="close_btn"><img src="static/img/Triangle Arrow.png" alt="닫기"></button></li>
-                 <div>팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 </div>
+                <!-- 팀 소개 보이기/숨기기 -->
+                <li class="open_btn"><span>팀 소개</span><button onclick="open_btn"><img
+                            src="/static/img/Triangle Arrow.png" style="width:13px;" alt="더보기"></button></li>
+                <li class="close_btn"><span>팀 소개</span><button onclick="close_btn"><img
+                            src="/static/img/Triangle Arrow.png" style="width:13px;" alt="닫기"></button></li>
+                <div class="open_list">
+                    <p><strong>I</strong> 4명과 <span>E</span> 한명이 모인 뉴비들의 반란!!<br>
+                        <em>IE9처럼 사라지지는 않을 겁니다</em>
+                    </p>
+                </div><!-- e:open_list -->
 
                 <!-- 방명록 작성폼 -->
-                <li>
+                <!-- <li>
                     <ul>
                         <li class="write_box">
                             <div class="form-floating mb-3">
@@ -114,18 +120,18 @@
                             <div class="w_b_btn">
                                 <button type="button" class="btn btn-outline-success"
                                     onclick="save_comment()">입력하기</button>
-                            </div><!-- e:w_b_btn -->
-                        </li><!-- e:write_box -->
-
-                        <div class="mycards" id="comment-list" style="padding: 20px;">
-                            
                             </div>
+                        </li> -->
+
+                <div class="mycards" id="comment-list" style="padding: 20px;">
+
+                </div>
 
 
 
 
-                    </ul>
-                </li>
+            </ul>
+            </li>
             </ul>
         </div><!-- e:info -->
     </main>

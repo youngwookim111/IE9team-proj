@@ -17,26 +17,33 @@ def go_detail(name):
     return render_template(target_html)
 
 # 방명록
-@app.route("/guestbook", methods=["POST"])
+@app.route("/writegb", methods=["POST"])
 def guestbook_post():
     nickname_receive = request.form['nickname_give']
     comment_receive = request.form['comment_give']
+    member_name_receive = request.form['member_name_give']
     doc = {
         'nickname':nickname_receive,
-        'comment' :comment_receive
+        'comment' :comment_receive,
+        'member_name' :member_name_receive
      }
     db.IE9.insert_one(doc)
     nickname_receive = request.form['nickname_give']
 
     return jsonify({'msg': '저장완료!'})
 
-@app.route("/guestbook", methods=["GET"])
+# 멤버 방명록 조회
+@app.route("/guestbookmem", methods=["POST"])
 def guestbook_get():
-    all_comments = list(db.IE9.find({},{'_id':False}))
+    member_name = request.form['member_name_give']
+    all_comments = list(db.IE9.find({'member_name':member_name},{'_id':False}))
     return jsonify({'result': all_comments})  
 
-
-
+# 전체 방명록 조회
+@app.route("/guestbook")
+def guestbook_all():
+    all_comments = list(db.IE9.find({},{'_id':False}))
+    return jsonify({'result': all_comments})  
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
