@@ -11,6 +11,29 @@ header,main,footer,nav,section,article,aside,figure,figcaption,details {
     font-family: 'Nanum Brush Script', cursive; */
     font-family: 'Nanum Gothic', sans-serif;
 }
+.pop_up {
+    background-size:contain;
+    width:100%;
+    height:100vh;z-index:99;
+    background-image:url(https://cdn.pixabay.com/photo/2022/01/11/19/43/avocado-6931344__340.jpg);position:absolute;
+    animation:bg 3s 1 linear; opacity:0;
+}
+@keyframes bg {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes op {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+main #team_profile {
+    display: flex; flex-flow:row wrap;
+    justify-content: center;
+    margin: 50px;
+    position: relative;
+    z-index: 99;
+    animation:op 5s 1 linear;opacity:1;
+}
 main {
     width: 1200px;
     margin: 0 auto;
@@ -22,20 +45,19 @@ main #title {
 }
 
 main #title h1 {
-    background-image:url(../img/ie9_logo.png);
+    
     font-size: 8rem;
     background-size: contain;
     height:300px;
 }
 
-main #team_profile {
-    display: flex;
-    justify-content: center;
-}
+
 
 main #team_profile .t_card {
     position: relative;
     margin-right: 10px;
+    width: 270px;
+    text-align:center;
 }
 
 main #team_profile .t_card .txt_box {
@@ -64,10 +86,6 @@ main #team_profile a img {
     border-radius: 50%;
 }
 
-main #team_profile {
-    margin: 50px;
-}
-
 main #team_profile .c_1 {}
 
 main #team_profile .c_1 img {}
@@ -93,6 +111,8 @@ main #info {}
 main #info>ul {}
 
 main #info>ul .open_btn {
+    position: relative;
+    z-index:99;
     width: 800px;
     margin: 50px auto;
     display: flex;
@@ -100,6 +120,8 @@ main #info>ul .open_btn {
 
 }
 main #info>ul .close_btn {
+    position: relative;
+    z-index: 99;
     width: 800px;
     margin: 50px auto;
     display: none;
