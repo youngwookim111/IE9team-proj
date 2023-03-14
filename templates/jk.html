@@ -63,9 +63,9 @@
                         let temp_html = `
                 <div class="card">
                     <div class="card-body">
-                       <blockquote class="blockquote mb-0">
-                         <p>${comment}</p>
-                         <footer class="blockquote-footer">${nickname}</footer>
+                        <blockquote class="blockquote mb-0">
+                            <p>${comment}</p>
+                            <footer class="blockquote-footer">${nickname}</footer>
                         </blockquote>
                     </div>
                 </div>
@@ -82,65 +82,56 @@
             show_comment()
         });
     </script>
-
-
 </head>
 
 <body>
-    <main>
+    <main id="detail_main">
         <h1>최진규</h1>
-
-        <div class="box1">
-
-            <div class="box2">
-
-                <div class="image"><img class="image"
-                        src="https://platum.kr/wp-content/uploads/2019/12/64497335_490811004989301_7459130390851092480_n.png"
-                        width='300' height='300'></div>
-
-                <div><br><br>최진규
-
+        <div id="all_info_box">
+            <div class="all_box">
+                <div class="image_box">
+                    <img class="image"
+                        src="https://platum.kr/wp-content/uploads/2019/12/64497335_490811004989301_7459130390851092480_n.png">
+                </div><!-- e:image_box -->
+                <div class="p_info">
+                    <p class="blog">블로그 : <a href="https://kyuparfum.tistory.com/">https://kyuparfum.tistory.com/</a>
+                    </p>
+                    <p class="email">이메일 : <a href="kyuparfum@naver.com">kyuparfum@naver.com</a></p>
+                    <div class="qr_code"></div>
+                    <p class="mbti">MBTI: <span>INFP</span></p>
+                </div><!-- e:p_info -->
+            </div><!-- e:all_box -->
+            <dl class="profile">
+                <dt>자기소개</dt>
+                
                     <div>
-                    블로그 : https://kyuparfum.tistory.com/</div>
-                    <div>이메일 : kyuparfum@naver.com</div>
-                    <div>MBTI:ESTJ-A </div>
+                        안녕하세요. 최진규입니다.<br>
+                        잘 부탁드리겠습니다.<br>
+                        팀 프로젝트 좋아합니다 누군가와 함께 협업해서 성취하는 걸 즐깁니다.<br>
+                        원래 조향사를 고등학생 때부터 꿈꿔서 하다가 1년 정도 휴식기를 가졌는데 그러면서<br>
+                        자연스럽게 코딩을 접했습니다.<br>
+                        이게 또 흥미가 생기고 그러면서 직종 변경까지 하게 됐습니다.<br>
+                        잘하는 건 꾸준히 한결같은 거라서 아마 완주하지 않을까 생각합니다.<br>
+                    </div>
+                
+            </dl><!-- e:profile -->
+        </div><!-- e:all_info_box -->
 
-                </div>
-
-                <div>
-                    <h4>자기소개</h4>
-
-                    안녕하세요. 최진규입니다.
-                    <br>잘부탁드리겠습니다.
-                    <br>팀 프로젝트 좋아합니다 누군가와함께협업해서 성취하는 걸 즐깁니다. ㅎㅎㅎ
-                    <br>원래 조향사를 고등학생때부터 꿈꿔서 하다가 1년정도 휴식기를 가졌는데 그러면서 <br>자연스럽게 코딩을 접했습니다.
-                    <br>이게 또 흥미가 생기고 그러면서 직종변경까지하게됐습니다.
-                    <br>잘하는 건 꾸준히 한결같은 거라서 아마 완주하지 않을까 생각합니다.
-                </div>
-
+        <div class="write_box">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="nickname" placeholder="닉네임" style="margin-bottom: 10px;">
+                <label for="floatingInput">닉네임</label>
             </div>
-           
-
-            <li class="write_box">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="nickname" placeholder="닉네임"
-                        style="margin-bottom: 10px;">
-                    <label for="floatingInput">닉네임</label>
-                </div>
-                <div class="form-floating">
-                    <textarea class="form-control" placeholder="방명록을 남겨주세요" id="comment"
-                        style="height: 100px"></textarea>
-                    <label for="floatingTextarea2">방명록</label>
-                </div>
-                <div class="w_b_btn">
-                    <button type="button" class="btn btn-outline-success" onclick="save_comment()">입력하기</button>
-                </div><!-- e:w_b_btn -->
-            </li><!-- e:write_box -->
-            <div class="mycards" id="comment-list" style="padding: 20px;">
-
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="방명록을 남겨주세요" id="comment" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">방명록</label>
             </div>
-
-
+            <div class="w_b_btn">
+                <button type="button" class="btn btn-outline-success" onclick="save_comment()">입력하기</button>
+            </div><!-- e:w_b_btn -->
+        </div><!-- e:write_box -->
+        <div class="mycards" id="comment-list" style="padding: 20px;">
+        </div>
     </main>
     <footer>
 

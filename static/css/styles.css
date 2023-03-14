@@ -1,42 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
-html,body,h1,h2,h3,h4,h5,h6,
-p,div,ol,ul,li,dl,dt,dd,address,blockquote,video,
-em,strong,span,sup,sub,del,s,q,a,img,
-table,thead,tbody,tfoot,th,tr,td,
-form,fieldset,legend,input,select,option,button,textarea,label,optgroup,
-header,main,footer,nav,section,article,aside,figure,figcaption,details {
-    /* font-family: 'Dokdo', cursive;
-    font-family: 'Hi Melody', cursive;
-    font-family: 'Jua', sans-serif;
-    font-family: 'Nanum Brush Script', cursive; */
-    font-family: 'Nanum Gothic', sans-serif;
-}
+
+
 .pop_up {
-    background-size:contain;
-    width:100%;
-    height:100vh;z-index:99;
-    background-image:url(https://cdn.pixabay.com/photo/2022/01/11/19/43/avocado-6931344__340.jpg);position:absolute;
-    animation:bg 3s 1 linear; opacity:0;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background-image: url(https://cdn.pixabay.com/photo/2022/01/11/19/43/avocado-6931344__340.jpg);
+    position: absolute;
+    animation: bg 3s 1 linear;
+    opacity: 0;
+    background-repeat: no-repeat;
 }
+
+body{
+    background-color: rgb(243, 239, 255);
+}
+
 @keyframes bg {
-    0% {opacity:1;}
-    100% {opacity:0;}
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @keyframes op {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
+
+#weather_section{
+    border: 1px solid gray;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
 main #team_profile {
-    display: flex; flex-flow:row wrap;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     margin: 50px;
     position: relative;
     z-index: 99;
-    animation:op 5s 1 linear;opacity:1;
+    animation: op 5s 1 linear;
+    opacity: 1;
 }
-main {
+
+#index_main {
     width: 1200px;
     margin: 0 auto;
+    
 }
 
 main #title {
@@ -45,10 +66,10 @@ main #title {
 }
 
 main #title h1 {
-    
+
     font-size: 8rem;
     background-size: contain;
-    height:300px;
+    height: 300px;
 }
 
 
@@ -57,7 +78,7 @@ main #team_profile .t_card {
     position: relative;
     margin-right: 10px;
     width: 270px;
-    text-align:center;
+    text-align: center;
 }
 
 main #team_profile .t_card .txt_box {
@@ -112,13 +133,14 @@ main #info>ul {}
 
 main #info>ul .open_btn {
     position: relative;
-    z-index:99;
+    z-index: 99;
     width: 800px;
     margin: 50px auto;
     display: flex;
     justify-content: space-between;
 
 }
+
 main #info>ul .close_btn {
     position: relative;
     z-index: 99;
@@ -128,22 +150,45 @@ main #info>ul .close_btn {
     justify-content: space-between;
 }
 
-main #info>ul .open_btn span {font-size:15px;}
+main #info>ul .open_btn span {
+    font-size: 15px;
+}
 
-main #info>ul .close_btn span {font-size:15px;}
+main #info>ul .close_btn span {
+    font-size: 15px;
+}
 
-main #info>ul .open_list {display:none;}
+main #info>ul .open_list {
+    display: none;
+}
 
 main #info>ul .open_list p {
     text-align: center;
     font-size: 2rem;
     line-height: 1.8;
 }
-main #info>ul .open_list p span {color:rgb(255, 0, 212); font-size:2.5rem;
-    line-height: 1.8; font-weight:700;}
-main #info>ul .open_list p strong {color:rgb(0, 8, 255); font-size:2.5rem;
-    line-height: 1.8;font-weight:700;}
-main #info>ul .open_list p em {font-size:2rem; line-height:1.8; color:#f00;font-weight:700;}
+
+main #info>ul .open_list p span {
+    color: rgb(255, 0, 212);
+    font-size: 2.5rem;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+main #info>ul .open_list p strong {
+    color: rgb(0, 8, 255);
+    font-size: 2.5rem;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+main #info>ul .open_list p em {
+    font-size: 2rem;
+    line-height: 1.8;
+    color: #f00;
+    font-weight: 700;
+}
+
 main #info>ul .open_btn button {}
 
 main #info>ul .open_btn button img {}
@@ -155,12 +200,13 @@ main #info>ul li ul {}
 .write_box {
     text-align: right;
     /* background-color:pink; */
-    width: 800px;
+    width: 50vw;
     display: flex;
     flex-flow: column nowrap;
     border: 1px solid #000;
-    margin: 0 auto;
+    margin: 0 0 0 250px;
     padding: 20px;
+    border-radius: 25px;
 }
 
 main #info>ul li ul .write_box input[type=text] {
@@ -175,6 +221,14 @@ main #info>ul li ul .write_box input[type=text] {
     margin: 10px;
 }
 
+
+.card {
+    margin-bottom: 15px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
 
 main #info>ul li ul .box {
     width: 500px;
@@ -197,3 +251,72 @@ main #info>ul li ul .b_3 {}
 main #info>ul li ul .b_4 {}
 
 /* 방명록할거면 어팬드해야하니깐 이부분은 그때지우면될거같습니다. */
+
+/* 개인페이지 css */
+#detail_main {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main>h1 {
+    margin: 50px;
+}
+
+main #all_info_box {
+    display: flex;
+}
+
+main #all_info_box .all_box {}
+
+main #all_info_box .all_box .image_box {}
+
+main #all_info_box .all_box .image_box .image {}
+
+main #all_info_box .all_box .p_info {
+    margin-right: 20px
+}
+
+main #all_info_box .all_box .p_info p {
+    margin-bottom: 10px;
+}
+
+main #all_info_box .all_box .p_info .name {}
+
+main #all_info_box .all_box .p_info .blog {}
+
+main #all_info_box .all_box .p_info .email {}
+
+.qr_code {
+    width: 10vmax;
+    height: 10vmax; 
+    background-color: aqua;
+    margin-bottom: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+main #all_info_box .all_box .p_info .mbti {}
+
+main #all_info_box .all_box .p_info .mbti span {}
+
+main #all_info_box .profile {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+main #all_info_box .profile dt {
+    margin-bottom: 40px;
+    font-size: 4rem;
+}
+
+main #all_info_box .profile div {
+
+    line-height: 1.6;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    white-space: normal;
+
+}

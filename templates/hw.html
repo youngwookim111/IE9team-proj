@@ -63,15 +63,15 @@
                         console.log(member_name)
 
                         let temp_html = `
-                <div class="card">
-                    <div class="card-body">
-                       <blockquote class="blockquote mb-0">
-                         <p>${comment}</p>
-                         <footer class="blockquote-footer">${nickname}</footer>
-                        </blockquote>
-                    </div>
-                </div>
-            `
+                            <div class="card">
+                                <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>${comment}</p>
+                                    <footer class="blockquote-footer">${nickname}</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        `
 
                         $('#comment-list').append(temp_html)
 
@@ -87,27 +87,27 @@
 </head>
 
 <body>
-    <main>
+    <main id="detail_main">
         <h1>장한울</h1>
 
 
-        <div class="box1">
-
-            <div class="box2">
-
-                <div class="image"><img class="image"
-                        src="https://platum.kr/wp-content/uploads/2019/12/64497335_490811004989301_7459130390851092480_n.png"
-                        width='300' height='300'></div>
-
-                <div><br><br>장한울
-
-                    <div>직업:취준생</div>
-
-                    <div>MBTI:ESTJ-A </div>
-                </div>
-
+        <div id="all_info_box">
+            <div class="all_box">
+                <div class="image_box">
+                    <img class="image"
+                        src="https://platum.kr/wp-content/uploads/2019/12/64497335_490811004989301_7459130390851092480_n.png">
+                </div><!-- e:image_box -->
+                <div class="p_info">
+                    <p class="blog">블로그 : <a href="https://olivertree.tistory.com/">https://olivertree.tistory.com/</a>
+                    </p>
+                    <p class="email">이메일 : <a href=" jww1512@naver.com"> jww1512@naver.com</a></p>
+                    <div class="qr_code"></div>
+                    <p class="mbti">MBTI: <span>ESTJ-A</span></p>
+                </div><!-- e:p_info -->
+            </div><!-- e:all_box -->
+            <dl class="profile">
+                <dt>자기소개</dt>
                 <div>
-                    <h4>자기소개</h4>
 
                     <br>프론트엔드는 어떤 것을 배우는지 궁금해서 웹 html-css 기초편을 수료중이다.
 
@@ -115,10 +115,13 @@
                     <h4>하루 일과 끝나면 독서 5분은 꼭 챙긴다 시간 부족하면 1-2분은 꼭 독서한다.</h4>
 
                     <br>코딩실력이 그저그런 실력이지만 코딩실력 한 단계 한 단계 쌓아올리고 있는 중 입니다.
+
                 </div>
+            </dl><!-- e:profile -->
+        </div><!-- e:all_info_box -->
 
-            </div>
 
+        
             <li class="write_box">
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="nickname" placeholder="닉네임"
