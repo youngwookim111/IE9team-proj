@@ -19,14 +19,14 @@ def go_detail(name):
 # 방명록
 @app.route("/guestbook", methods=["POST"])
 def guestbook_post():
-    name_receive = request.form['name_give']
+    nickname_receive = request.form['nickname_give']
     comment_receive = request.form['comment_give']
     doc = {
-        'name':name_receive,
+        'nickname':nickname_receive,
         'comment' :comment_receive
      }
     db.IE9.insert_one(doc)
-    name_receive = request.form['name_give']
+    nickname_receive = request.form['nickname_give']
 
     return jsonify({'msg': '저장완료!'})
 

@@ -17,50 +17,54 @@ function go_detail_page(name) {
     //등록된 url 및 window 속성 기준으로 팝업창을 연다.
     window.open(url, "hello popup", windowStatus);
 
-
-    // window.open(`${name}`, '_blank');
 }
-
-
-
+// function go_detail_page(name) {
+//     window.open(`${name}`, '_blank');
+// }
 
 window.onload = function () {
     let open_btn = document.querySelector('.open_btn')
     let close_btn = document.querySelector('.close_btn')
-    let close_btn_img = document.querySelector('.close_btn img')
-    let hide_list = document.querySelector('.hide_list')
-    console.log(close_btn_img, close_btn)
+    let open_list = document.querySelector('.open_list')
+    let r_c_btn_box = document.querySelector('.r_c_btn_box')
+    let r_btn_box = document.querySelector('.r_btn_box')
+    console.log(open_btn, open_list, close_btn)
 
     open_btn.addEventListener('click', function () {
-        hide_list.style.display = 'block'
-        open_btn.style.display = 'none'
-        close_btn.style.display = 'flex'
-        close_btn_img.style.transform = 'rotate(180deg)'
+        open_list.style.display = 'block'
+        r_btn_box.style.display = 'none'
+        close_btn.style.display = 'block'
+        r_c_btn_box.style.display = 'block'
     })
 
+
     close_btn.addEventListener('click', function () {
-        hide_list.style.display = 'none'
-        open_btn.style.display = 'flex'
-        close_btn.style.display = 'none'
+        open_list.style.display = 'none'
+        r_btn_box.style.display = 'block'
+        r_c_btn_box.style.display = 'none'
     })
+
 
 }
 
 
 // 방명록 
 function save_comment() {
-    let name = $('#name').val()
+    let name = document.getElementById("member_name").value;
+    let nickname = $('#nickname').val()
     let comment = $('#comment').val()
 
     let formData = new FormData();
-    formData.append("name_give", name);
+    formData.append("nickname_give", nickname);
     formData.append("comment_give", comment);
 
     fetch('/guestbook', { method: "POST", body: formData, })
         .then((res) => res.json())
         .then((data) => {
             alert(data["msg"]);
+            console.log('name')
             window.location.reload()
+
         });
 }
 function show_comment() {
@@ -68,7 +72,7 @@ function show_comment() {
         let rows = data['result']
         $('#comment-list').empty()
         rows.forEach((a) => {
-            let name = a['name']
+            let nickname = a['nickname']
             let comment = a['comment']
 
             let temp_html = `
@@ -76,7 +80,7 @@ function show_comment() {
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
                     <p>${comment}</p>
-                    <footer class="blockquote-footer">${name}</footer>
+                    <footer class="blockquote-footer">${nickname}</footer>
                 </blockquote>
             </div>
         </div>
