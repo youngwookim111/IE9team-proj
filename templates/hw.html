@@ -23,44 +23,46 @@
     <link rel="stylesheet" href="static/css/styles.css" />
     <title>IE9 Team - 장한울</title>
 
+
+
     <script>
         // 방명록 
-function save_comment() {
-    let nickname = $('#nickname').val()
-    let comment = $('#comment').val()
+        function save_comment() {
+            let nickname = $('#nickname').val()
+            let comment = $('#comment').val()
 
-    let formData = new FormData();
-    formData.append("nickname_give", nickname);
-    formData.append("comment_give", comment);
-    formData.append("member_name_give" , '장한울');
+            let formData = new FormData();
+            formData.append("nickname_give", nickname);
+            formData.append("comment_give", comment);
+            formData.append("member_name_give", '장한울');
 
-    fetch('/writegb', { method: "POST", body: formData, })
-        .then((res) => res.json())
-        .then((data) => {
-            alert(data["msg"]);
-            window.location.reload()
-        });
-}
-function show_comment() {
-    let member_name = '장한울'
-    formData = new FormData();
-    formData.append("member_name_give", member_name);
+            fetch('/writegb', { method: "POST", body: formData, })
+                .then((res) => res.json())
+                .then((data) => {
+                    alert(data["msg"]);
+                    window.location.reload()
+                });
+        }
+        function show_comment() {
+            let member_name = '장한울'
+            formData = new FormData();
+            formData.append("member_name_give", member_name);
 
-    fetch('/guestbookmem', { method: "POST", body: formData, })
-        .then((res) => res.json())
-        .then((data) => {
-            let rows = data['result']
-            console.log(rows)
-            $('#comment-list').empty()
-            let member_name = rows['member_name']
+            fetch('/guestbookmem', { method: "POST", body: formData, })
+                .then((res) => res.json())
+                .then((data) => {
+                    let rows = data['result']
+                    console.log(rows)
+                    $('#comment-list').empty()
+                    let member_name = rows['member_name']
 
-            rows.forEach((a) => {
-                let nickname = a['nickname']
-                let comment = a['comment']
+                    rows.forEach((a) => {
+                        let nickname = a['nickname']
+                        let comment = a['comment']
 
-                console.log(member_name)
+                        console.log(member_name)
 
-                let temp_html = `
+                        let temp_html = `
                 <div class="card">
                     <div class="card-body">
                        <blockquote class="blockquote mb-0">
@@ -71,41 +73,70 @@ function show_comment() {
                 </div>
             `
 
-                $('#comment-list').append(temp_html)
+                        $('#comment-list').append(temp_html)
 
 
-            })
+                    })
 
-        })
-}
-$(document).ready(function () {
-    show_comment()
-});
+                })
+        }
+        $(document).ready(function () {
+            show_comment()
+        });
     </script>
 </head>
 
 <body>
     <main>
         <h1>장한울</h1>
-        <li class="write_box">
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="nickname" placeholder="닉네임"
-                    style="margin-bottom: 10px;">
-                <label for="floatingInput">닉네임</label>
+
+
+        <div class="box1">
+
+            <div class="box2">
+
+                <div class="image"><img class="image"
+                        src="https://platum.kr/wp-content/uploads/2019/12/64497335_490811004989301_7459130390851092480_n.png"
+                        width='300' height='300'></div>
+
+                <div><br><br>장한울
+
+                    <div>직업:취준생</div>
+
+                    <div>MBTI:ESTJ-A </div>
+                </div>
+
+                <div>
+                    <h4>자기소개</h4>
+
+                    <br>프론트엔드는 어떤 것을 배우는지 궁금해서 웹 html-css 기초편을 수료중이다.
+
+                    <br>
+                    <h4>하루 일과 끝나면 독서 5분은 꼭 챙긴다 시간 부족하면 1-2분은 꼭 독서한다.</h4>
+
+                    <br>코딩실력이 그저그런 실력이지만 코딩실력 한 단계 한 단계 쌓아올리고 있는 중 입니다.
+                </div>
+
             </div>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="방명록을 남겨주세요" id="comment"
-                    style="height: 100px"></textarea>
-                <label for="floatingTextarea2">방명록</label>
+
+            <li class="write_box">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="nickname" placeholder="닉네임"
+                        style="margin-bottom: 10px;">
+                    <label for="floatingInput">닉네임</label>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="방명록을 남겨주세요" id="comment"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">방명록</label>
+                </div>
+                <div class="w_b_btn">
+                    <button type="button" class="btn btn-outline-success" onclick="save_comment()">입력하기</button>
+                </div><!-- e:w_b_btn -->
+            </li><!-- e:write_box -->
+            <div class="mycards" id="comment-list" style="padding: 20px;">
+
             </div>
-            <div class="w_b_btn">
-                <button type="button" class="btn btn-outline-success"
-                    onclick="save_comment()">입력하기</button>
-            </div><!-- e:w_b_btn -->
-        </li><!-- e:write_box -->
-        <div class="mycards" id="comment-list" style="padding: 20px;">
-                            
-        </div>
 
 
     </main>
