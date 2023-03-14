@@ -2,16 +2,13 @@
 <html lang="ko">
 
 <head>
-    
+
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
     <!-- RESET CSS -->
     <link rel="stylesheet" href="static/css/reset.css">
-    
+
 
     <!-- 부트스트랩 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,7 +18,7 @@
         crossorigin="anonymous"></script>
     <!-- AJAX CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <script src="static/js/index.js"></script>
     <script src="static/js/weather.js"></script>
 
@@ -34,7 +31,7 @@
 
 
     <script>
-        
+
     </script>
 </head>
 
@@ -43,18 +40,18 @@
         <div id="title">
             <h1>
                 IE9(아이구)
-                <div id = weather_section>
+                <div id=weather_section>
                     <span class="title">Weather</span>
-                    
-                    <div id = "weatherContainer">
-                        <span id = "weather"></span><br>
-                        <span id = "city"></span><img src="static/img/gps_icon.png" style="width:14px;"><br>
-                        <span id = "other_temp"></span>            
+
+                    <div id="weatherContainer">
+                        <span id="weather"></span><br>
+                        <span id="city"></span><img src="static/img/gps_icon.png" style="width:14px;"><br>
+                        <span id="other_temp"></span>
                     </div>
-                    
-                </div> 
+
+                </div>
             </h1>
-            
+
         </div><!-- e:title -->
         <div id="team_profile">
             <a href='javascript:void(0);' onclick="go_detail_page('cy')" class="t_card c_1">
@@ -95,38 +92,33 @@
         </div><!-- e:team_profile -->
         <div id="info">
             <ul>
-                    <!-- 팀 소개 보이기/숨기기 -->
+                <!-- 팀 소개 보이기/숨기기 -->
                 <li class="open_btn"><span>팀소개</span><button onclick="open_btn"><img src="#" alt="더보기"></button></li>
                 <div>팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 팀소개 </div>
-                
+
                 <!-- 방명록 작성폼 -->
                 <li>
                     <ul>
                         <li class="write_box">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="닉네임" style="margin-bottom: 10px;">
+                                <input type="email" class="form-control" id="name" placeholder="닉네임"
+                                    style="margin-bottom: 10px;">
                                 <label for="floatingInput">닉네임</label>
-                              </div>
+                            </div>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="방명록을 남겨주세요" id="floatingTextarea2"
+                                <textarea class="form-control" placeholder="방명록을 남겨주세요" id="comment"
                                     style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">방명록</label>
                             </div>
                             <div class="w_b_btn">
-                                <button type="button" class="btn btn-outline-success" onclick="save_comment()">입력하기</button>
+                                <button type="button" class="btn btn-outline-success"
+                                    onclick="save_comment()">입력하기</button>
                             </div><!-- e:w_b_btn -->
                         </li><!-- e:write_box -->
 
-
-                        <!-- 방명록 불러오기 -->
-                        <li class="box b_1">
-                            <p>방명록1</p>
-                            <p>-닉네임</p>
-                        </li><!-- e:b_1 -->
-                        <li class="box b_2">
-                            <p>방명록2</p>
-                            <p>-닉네임</p>
-                        </li><!-- e:b_2 -->
+                        <div class="mycards" id="comment-list" style="padding: 20px;">
+                            
+                            </div>
 
 
 
